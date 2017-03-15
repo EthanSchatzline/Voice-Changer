@@ -32,9 +32,9 @@ class AudioPlayerViewController: UIViewController {
     
     // MARK: - Properties
     var receivedAudio: RecordedAudio!
-    var audioFile: AVAudioFile?
-    var audioEngine: AVAudioEngine = AVAudioEngine()
-    var changePitchEffect: AVAudioUnitTimePitch = AVAudioUnitTimePitch()
+    private var audioFile: AVAudioFile?
+    private var audioEngine: AVAudioEngine = AVAudioEngine()
+    private var changePitchEffect: AVAudioUnitTimePitch = AVAudioUnitTimePitch()
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
