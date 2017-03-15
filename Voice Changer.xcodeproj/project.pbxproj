@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3B3083291BDF3C4800567461 /* RecordedAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3083281BDF3C4800567461 /* RecordedAudio.swift */; };
+		3B6526731B56232F008358EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B6526711B56232F008358EA /* Main.storyboard */; };
 		3BF326F31B55FF4700B6FBBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF326F21B55FF4700B6FBBC /* AppDelegate.swift */; };
-		3BF326F51B55FF4700B6FBBC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF326F41B55FF4700B6FBBC /* ViewController.swift */; };
-		3BF326F81B55FF4700B6FBBC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BF326F61B55FF4700B6FBBC /* Main.storyboard */; };
+		3BF326F51B55FF4700B6FBBC /* RecordSoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF326F41B55FF4700B6FBBC /* RecordSoundsViewController.swift */; };
 		3BF326FA1B55FF4700B6FBBC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BF326F91B55FF4700B6FBBC /* Images.xcassets */; };
 		3BF326FD1B55FF4700B6FBBC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BF326FB1B55FF4700B6FBBC /* LaunchScreen.xib */; };
 		3BF327091B55FF4700B6FBBC /* Voice_ChangerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF327081B55FF4700B6FBBC /* Voice_ChangerTests.swift */; };
+		3BF327131B56152B00B6FBBC /* PlaySoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF327121B56152B00B6FBBC /* PlaySoundsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,16 +28,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3B3083281BDF3C4800567461 /* RecordedAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordedAudio.swift; sourceTree = "<group>"; };
+		3B6526721B56232F008358EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3BF326ED1B55FF4700B6FBBC /* Voice Changer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Voice Changer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BF326F11B55FF4700B6FBBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BF326F21B55FF4700B6FBBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3BF326F41B55FF4700B6FBBC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3BF326F71B55FF4700B6FBBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3BF326F41B55FF4700B6FBBC /* RecordSoundsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSoundsViewController.swift; sourceTree = "<group>"; };
 		3BF326F91B55FF4700B6FBBC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3BF326FC1B55FF4700B6FBBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		3BF327021B55FF4700B6FBBC /* Voice ChangerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Voice ChangerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BF327071B55FF4700B6FBBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BF327081B55FF4700B6FBBC /* Voice_ChangerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voice_ChangerTests.swift; sourceTree = "<group>"; };
+		3BF327121B56152B00B6FBBC /* PlaySoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySoundsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +82,10 @@
 			isa = PBXGroup;
 			children = (
 				3BF326F21B55FF4700B6FBBC /* AppDelegate.swift */,
-				3BF326F41B55FF4700B6FBBC /* ViewController.swift */,
-				3BF326F61B55FF4700B6FBBC /* Main.storyboard */,
+				3B3083281BDF3C4800567461 /* RecordedAudio.swift */,
+				3BF326F41B55FF4700B6FBBC /* RecordSoundsViewController.swift */,
+				3BF327121B56152B00B6FBBC /* PlaySoundsViewController.swift */,
+				3B6526711B56232F008358EA /* Main.storyboard */,
 				3BF326F91B55FF4700B6FBBC /* Images.xcassets */,
 				3BF326FB1B55FF4700B6FBBC /* LaunchScreen.xib */,
 				3BF326F01B55FF4700B6FBBC /* Supporting Files */,
@@ -156,14 +162,24 @@
 		3BF326E51B55FF4700B6FBBC /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "ES Interactive";
 				TargetAttributes = {
 					3BF326EC1B55FF4700B6FBBC = {
 						CreatedOnToolsVersion = 6.4;
+						DevelopmentTeam = B8TMU4AK57;
+						LastSwiftMigration = 0820;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
 					};
 					3BF327011B55FF4700B6FBBC = {
 						CreatedOnToolsVersion = 6.4;
+						LastSwiftMigration = 0820;
 						TestTargetID = 3BF326EC1B55FF4700B6FBBC;
 					};
 				};
@@ -192,9 +208,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BF326F81B55FF4700B6FBBC /* Main.storyboard in Resources */,
 				3BF326FD1B55FF4700B6FBBC /* LaunchScreen.xib in Resources */,
 				3BF326FA1B55FF4700B6FBBC /* Images.xcassets in Resources */,
+				3B6526731B56232F008358EA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,7 +228,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3BF326F51B55FF4700B6FBBC /* ViewController.swift in Sources */,
+				3B3083291BDF3C4800567461 /* RecordedAudio.swift in Sources */,
+				3BF327131B56152B00B6FBBC /* PlaySoundsViewController.swift in Sources */,
+				3BF326F51B55FF4700B6FBBC /* RecordSoundsViewController.swift in Sources */,
 				3BF326F31B55FF4700B6FBBC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -236,10 +254,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3BF326F61B55FF4700B6FBBC /* Main.storyboard */ = {
+		3B6526711B56232F008358EA /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				3BF326F71B55FF4700B6FBBC /* Base */,
+				3B6526721B56232F008358EA /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -340,9 +358,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Voice Changer/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.ethanschatzline.Voice-Changer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -350,9 +375,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Voice Changer/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.ethanschatzline.Voice-Changer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -371,6 +403,7 @@
 				INFOPLIST_FILE = "Voice ChangerTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Voice Changer.app/Voice Changer";
 			};
 			name = Debug;
@@ -386,6 +419,7 @@
 				INFOPLIST_FILE = "Voice ChangerTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Voice Changer.app/Voice Changer";
 			};
 			name = Release;
@@ -409,6 +443,7 @@
 				3BF3270E1B55FF4700B6FBBC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3BF3270F1B55FF4700B6FBBC /* Build configuration list for PBXNativeTarget "Voice ChangerTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +452,7 @@
 				3BF327111B55FF4700B6FBBC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
