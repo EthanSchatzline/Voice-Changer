@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 
+// MARK: - Constants
 private struct Constants {
     struct Rate {
         static let Default: Float = 1.0

@@ -47,15 +47,6 @@ class RecordingViewController: UIViewController {
         
         stopButton.isHidden = true
     }
-
-    // MARK: - Actions
-    @IBAction func recordButtonTapped(_ sender: UIButton) {
-        toggleRecording()
-    }
-    
-    @IBAction func stopButtonTapped(_ sender: UIButton) {
-        toggleRecording()
-    }
     
     // MARK: - Private
     private func toggleRecording() {
@@ -77,6 +68,15 @@ class RecordingViewController: UIViewController {
         audioRecorder?.delegate = self
         audioRecorder?.record()
     }
+
+    // MARK: - Actions
+    @IBAction func recordButtonTapped(_ sender: UIButton) {
+        toggleRecording()
+    }
+    
+    @IBAction func stopButtonTapped(_ sender: UIButton) {
+        toggleRecording()
+    }
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -86,6 +86,7 @@ class RecordingViewController: UIViewController {
     }
 }
 
+// MARK: - AVAudioRecorderDelegate
 extension RecordingViewController: AVAudioRecorderDelegate {
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         if(flag){
