@@ -30,7 +30,7 @@ class RecordingViewController: UIViewController {
     private var audioRecorder: AVAudioRecorder?
     fileprivate var recordedAudio: RecordedAudio?
     private let recordSettings: [String : Any] =
-        [AVEncoderAudioQualityKey: AVAudioQuality.min.rawValue,
+        [AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue,
          AVEncoderBitRateKey: 16,
          AVNumberOfChannelsKey: 2,
          AVSampleRateKey: 44100.0]
