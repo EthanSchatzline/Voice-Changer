@@ -1,5 +1,5 @@
 //
-//  PlaySoundsViewController.swift
+//  AudioPlayerViewController.swift
 //  Voice Changer
 //
 //  Created by Ethan Schatzline on 7/14/15.
@@ -9,7 +9,7 @@
 import UIKit
 import AVFoundation
 
-class PlaySoundsViewController: UIViewController {
+class AudioPlayerViewController: UIViewController {
     
     var receivedAudio: RecordedAudio!
     var audioEngine: AVAudioEngine!

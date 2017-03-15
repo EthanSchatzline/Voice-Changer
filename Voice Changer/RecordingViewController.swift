@@ -1,5 +1,5 @@
 //
-//  RecordSoundsViewController.swift
+//  RecordingViewController.swift
 //  Voice Changer
 //
 //  Created by Ethan Schatzline on 7/14/15.
@@ -18,7 +18,7 @@ private struct Constants {
     }
 }
 
-class RecordSoundsViewController: UIViewController {
+class RecordingViewController: UIViewController {
 
     // MARK: - Outlets
     @IBOutlet var statusLabel: UILabel!
@@ -79,13 +79,13 @@ class RecordSoundsViewController: UIViewController {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let viewcontroller: PlaySoundsViewController = segue.destination as? PlaySoundsViewController {
+        if let viewcontroller = segue.destination as? AudioPlayerViewController {
             viewcontroller.receivedAudio = recordedAudio
         }
     }
 }
 
-extension RecordSoundsViewController: AVAudioRecorderDelegate {
+extension RecordingViewController: AVAudioRecorderDelegate {
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         if(flag){
             recordedAudio = RecordedAudio(filePathUrl: recorder.url, title: recorder.url.lastPathComponent)

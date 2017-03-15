@@ -14,7 +14,7 @@
         <!--Record-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="RecordSoundsViewController" customModule="Voice_Changer" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="RecordingViewController" customModule="Voice_Changer" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -87,12 +87,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1339" y="352"/>
+            <point key="canvasLocation" x="1038" y="352"/>
         </scene>
-        <!--Play Sounds View Controller-->
+        <!--Audio Player View Controller-->
         <scene sceneID="Gem-Wa-FDl">
             <objects>
-                <viewController id="oWm-wK-Bp6" customClass="PlaySoundsViewController" customModule="Voice_Changer" sceneMemberID="viewController">
+                <viewController id="oWm-wK-Bp6" customClass="AudioPlayerViewController" customModule="Voice_Changer" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Zpp-bI-DtI"/>
                         <viewControllerLayoutGuide type="bottom" id="Hxx-5z-UAp"/>
@@ -257,7 +257,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f2N-ia-y23" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2147" y="352"/>
+            <point key="canvasLocation" x="1438" y="352"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aTK-8V-oKZ">

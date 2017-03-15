@@ -10,11 +10,11 @@
 		3B3083291BDF3C4800567461 /* RecordedAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3083281BDF3C4800567461 /* RecordedAudio.swift */; };
 		3B6526731B56232F008358EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B6526711B56232F008358EA /* Main.storyboard */; };
 		3BF326F31B55FF4700B6FBBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF326F21B55FF4700B6FBBC /* AppDelegate.swift */; };
-		3BF326F51B55FF4700B6FBBC /* RecordSoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF326F41B55FF4700B6FBBC /* RecordSoundsViewController.swift */; };
+		3BF326F51B55FF4700B6FBBC /* RecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF326F41B55FF4700B6FBBC /* RecordingViewController.swift */; };
 		3BF326FA1B55FF4700B6FBBC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BF326F91B55FF4700B6FBBC /* Images.xcassets */; };
 		3BF326FD1B55FF4700B6FBBC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3BF326FB1B55FF4700B6FBBC /* LaunchScreen.xib */; };
 		3BF327091B55FF4700B6FBBC /* Voice_ChangerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF327081B55FF4700B6FBBC /* Voice_ChangerTests.swift */; };
-		3BF327131B56152B00B6FBBC /* PlaySoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF327121B56152B00B6FBBC /* PlaySoundsViewController.swift */; };
+		3BF327131B56152B00B6FBBC /* AudioPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF327121B56152B00B6FBBC /* AudioPlayerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,13 +33,13 @@
 		3BF326ED1B55FF4700B6FBBC /* Voice Changer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Voice Changer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BF326F11B55FF4700B6FBBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BF326F21B55FF4700B6FBBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3BF326F41B55FF4700B6FBBC /* RecordSoundsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSoundsViewController.swift; sourceTree = "<group>"; };
+		3BF326F41B55FF4700B6FBBC /* RecordingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingViewController.swift; sourceTree = "<group>"; };
 		3BF326F91B55FF4700B6FBBC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3BF326FC1B55FF4700B6FBBC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		3BF327021B55FF4700B6FBBC /* Voice ChangerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Voice ChangerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BF327071B55FF4700B6FBBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BF327081B55FF4700B6FBBC /* Voice_ChangerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Voice_ChangerTests.swift; sourceTree = "<group>"; };
-		3BF327121B56152B00B6FBBC /* PlaySoundsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaySoundsViewController.swift; sourceTree = "<group>"; };
+		3BF327121B56152B00B6FBBC /* AudioPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +60,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E0892C71E7914400070B111 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				3B3083281BDF3C4800567461 /* RecordedAudio.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		2E0892C81E7914470070B111 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				3BF326F41B55FF4700B6FBBC /* RecordingViewController.swift */,
+				3BF327121B56152B00B6FBBC /* AudioPlayerViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		3BF326E41B55FF4700B6FBBC = {
 			isa = PBXGroup;
 			children = (
@@ -81,13 +98,10 @@
 		3BF326EF1B55FF4700B6FBBC /* Voice Changer */ = {
 			isa = PBXGroup;
 			children = (
-				3BF326F21B55FF4700B6FBBC /* AppDelegate.swift */,
-				3B3083281BDF3C4800567461 /* RecordedAudio.swift */,
-				3BF326F41B55FF4700B6FBBC /* RecordSoundsViewController.swift */,
-				3BF327121B56152B00B6FBBC /* PlaySoundsViewController.swift */,
+				2E0892C71E7914400070B111 /* Models */,
+				2E0892C81E7914470070B111 /* Controllers */,
 				3B6526711B56232F008358EA /* Main.storyboard */,
 				3BF326F91B55FF4700B6FBBC /* Images.xcassets */,
-				3BF326FB1B55FF4700B6FBBC /* LaunchScreen.xib */,
 				3BF326F01B55FF4700B6FBBC /* Supporting Files */,
 			);
 			path = "Voice Changer";
@@ -96,7 +110,9 @@
 		3BF326F01B55FF4700B6FBBC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3BF326F21B55FF4700B6FBBC /* AppDelegate.swift */,
 				3BF326F11B55FF4700B6FBBC /* Info.plist */,
+				3BF326FB1B55FF4700B6FBBC /* LaunchScreen.xib */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -229,8 +245,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B3083291BDF3C4800567461 /* RecordedAudio.swift in Sources */,
-				3BF327131B56152B00B6FBBC /* PlaySoundsViewController.swift in Sources */,
-				3BF326F51B55FF4700B6FBBC /* RecordSoundsViewController.swift in Sources */,
+				3BF327131B56152B00B6FBBC /* AudioPlayerViewController.swift in Sources */,
+				3BF326F51B55FF4700B6FBBC /* RecordingViewController.swift in Sources */,
 				3BF326F31B55FF4700B6FBBC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
