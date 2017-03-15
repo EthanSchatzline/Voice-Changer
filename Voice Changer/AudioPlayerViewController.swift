@@ -33,25 +33,25 @@ class AudioPlayerViewController: UIViewController {
     // MARK: - Properties
     var receivedAudio: RecordedAudio!
     var audioFile: AVAudioFile?
-    var audioEngine: AVAudioEngine!
-    var changePitchEffect: AVAudioUnitTimePitch!
+    var audioEngine: AVAudioEngine = AVAudioEngine()
+    var changePitchEffect: AVAudioUnitTimePitch = AVAudioUnitTimePitch()
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        audioFile = try? AVAudioFile(forReading: receivedAudio.filePathUrl as URL)
-        audioEngine = AVAudioEngine()
-        changePitchEffect = AVAudioUnitTimePitch()
+        audioFile = try? AVAudioFile(forReading: receivedAudio.filePathUrl)
     }
     
     // MARK: - Private
     private func setPitch(_ pitch: Float) {
+        pitchSlider.value = pitch
         pitchLabel.text = "Pitch: \(Int(pitch))"
         changePitchEffect.pitch = pitch
     }
     
     private func setRate(_ rate: Float) {
+        speedSlider.value = rate
         speedLabel.text = "Speed: \(Int(rate))"
         changePitchEffect.rate = rate
     }
@@ -70,6 +70,7 @@ class AudioPlayerViewController: UIViewController {
         audioEngine.connect(changePitchEffect, to: audioEngine.outputNode, format: nil)
         
         audioPlayerNode.scheduleFile(audioFile, at: nil, completionHandler: nil)
+        
         do {
             try audioEngine.start()
             try AVAudioSession.sharedInstance().overrideOutputAudioPort(AVAudioSessionPortOverride.speaker)
@@ -87,33 +88,25 @@ class AudioPlayerViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func snailButtonTapped(_ sender: UIButton) {
-        pitchSlider.value = Constants.Pitch.Default
         setPitch(Constants.Pitch.Default)
-        speedSlider.value = Constants.Rate.Snail
         setRate(Constants.Rate.Snail)
         playAudio()
     }
     
     @IBAction func rabbitButtonTapped(_ sender: UIButton) {
-        pitchSlider.value = Constants.Pitch.Default
         setPitch(Constants.Pitch.Default)
-        speedSlider.value = Constants.Rate.Rabbit
         setRate(Constants.Rate.Rabbit)
         playAudio()
     }
     
     @IBAction func chipmunkButtonTapped(_ sender: UIButton) {
-        pitchSlider.value = Constants.Pitch.Chipmunk
         setPitch(Constants.Pitch.Chipmunk)
-        speedSlider.value = Constants.Rate.Default
         setRate(Constants.Rate.Default)
         playAudio()
     }
     
     @IBAction func vaderButtonTapped(_ sender: UIButton) {
-        pitchSlider.value = Constants.Pitch.Vader
         setPitch(Constants.Pitch.Vader)
-        speedSlider.value = Constants.Rate.Default
         setRate(Constants.Rate.Default)
         playAudio()
     }
