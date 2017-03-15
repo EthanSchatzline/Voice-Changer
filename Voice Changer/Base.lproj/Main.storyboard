@@ -87,7 +87,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1038" y="352"/>
+            <point key="canvasLocation" x="1290" y="352"/>
         </scene>
         <!--Audio Player View Controller-->
         <scene sceneID="Gem-Wa-FDl">
@@ -111,7 +111,7 @@
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="fastPlay:" destination="oWm-wK-Bp6" eventType="touchUpInside" id="8be-fG-W2G"/>
+                                    <action selector="rabbitButtonTapped:" destination="oWm-wK-Bp6" eventType="touchUpInside" id="jjp-0G-410"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="De2-aF-BOz">
@@ -120,7 +120,7 @@
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="playChipmunkAudio:" destination="oWm-wK-Bp6" eventType="touchUpInside" id="gXQ-Tk-PME"/>
+                                    <action selector="chipmunkButtonTapped:" destination="oWm-wK-Bp6" eventType="touchUpInside" id="g3G-RE-gqM"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LAZ-e0-duu">
@@ -129,7 +129,7 @@
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="playDarthVaderAudio:" destination="oWm-wK-Bp6" eventType="touchUpInside" id="Tsr-18-wfc"/>
+                                    <action selector="vaderButtonTapped:" destination="oWm-wK-Bp6" eventType="touchUpInside" id="cTR-qg-Oz6"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pitch: 1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yDa-CY-xDH">
@@ -144,7 +144,7 @@
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="playAudio:" destination="oWm-wK-Bp6" eventType="touchUpInside" id="dBa-Ol-NIJ"/>
+                                    <action selector="playButtonTapped:" destination="oWm-wK-Bp6" eventType="touchUpInside" id="Jc3-cO-wRU"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Knw-cw-Rp7">
@@ -153,7 +153,7 @@
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="slowPlay:" destination="oWm-wK-Bp6" eventType="touchUpInside" id="r1y-DB-K9z"/>
+                                    <action selector="snailButtonTapped:" destination="oWm-wK-Bp6" eventType="touchUpInside" id="iGl-Hl-yEk"/>
                                 </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="-2400" maxValue="2400" translatesAutoresizingMaskIntoConstraints="NO" id="fM6-eW-p1t">
@@ -172,7 +172,7 @@
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="stopPlay:" destination="oWm-wK-Bp6" eventType="touchUpInside" id="l0D-vF-fhb"/>
+                                    <action selector="stopButtonTapped:" destination="oWm-wK-Bp6" eventType="touchUpInside" id="oxA-Bp-7dG"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed: 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Kg-px-ZxE">
@@ -181,7 +181,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="JM2-Rz-IA1">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="32" translatesAutoresizingMaskIntoConstraints="NO" id="JM2-Rz-IA1">
                                 <rect key="frame" x="38" y="376" width="244" height="31"/>
                                 <connections>
                                     <action selector="speedSliderChanged:" destination="oWm-wK-Bp6" eventType="valueChanged" id="6eW-NF-YLI"/>
@@ -257,7 +257,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f2N-ia-y23" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1438" y="352"/>
+            <point key="canvasLocation" x="1963" y="352"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aTK-8V-oKZ">

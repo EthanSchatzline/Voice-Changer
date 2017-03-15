@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 
+// MARK: - Constants
 private struct Constants {
     struct SegueID {
         static let StopRecording: String = "stopRecording"
