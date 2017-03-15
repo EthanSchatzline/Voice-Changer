@@ -32,59 +32,18 @@ class AudioPlayerViewController: UIViewController {
         changePitchEffect = AVAudioUnitTimePitch()
     }
     
-    // MARK: - Actions
-    @IBAction func snailButtonTapped(_ sender: UIButton) {
-        pitchSlider.value = 1.0
-        pitchLabel.text = ("Pitch: \(pitchSlider.value)")
-        changePitchEffect.pitch = 1
-        playAudioWithVariablePitch(0.5)
-    }
-    
-    @IBAction func rabbitButtonTapped(_ sender: UIButton) {
-        pitchSlider.value = 1.0
-        pitchLabel.text = ("Pitch: \(pitchSlider.value)")
-        changePitchEffect.pitch = 1
-        playAudioWithVariablePitch(2.0)
-    }
-    
-    @IBAction func chipmunkButtonTapped(_ sender: UIButton) {
-        pitchSlider.value = 1000
-        pitchLabel.text = ("Pitch: \(1000)")
-        changePitchEffect.pitch = 1000
-        playAudioWithVariablePitch(1.0)
-    }
-    
-    @IBAction func vaderButtonTapped(_ sender: UIButton) {
-        pitchSlider.value = -700
-        pitchLabel.text = ("Pitch: \(-700)")
-        changePitchEffect.pitch = -700
-        playAudioWithVariablePitch(1.0)
-    }
-    
-    @IBAction func playButtonTapped(_ sender: UIButton) {
-        playAudioWithVariablePitch(1.0)
-    }
-
-    @IBAction func stopButtonTapped(_ sender: UIButton) {
-        audioEngine.stop()
-        audioEngine.reset()
-        pitchSlider.value = 1.0
-        pitchLabel.text = ("Pitch: \(1.0)")
-        changePitchEffect.pitch = 1.0
-    }
-    
-    @IBAction func pitchSliderChanged(_ sender: UISlider) {
-        changePitchEffect.pitch = sender.value
-        pitchLabel.text = "Pitch: \(sender.value)"
-    }
-    
-    @IBAction func speedSliderChanged(_ sender: UISlider) {
-        // TODO - set speed
-        speedLabel.text = "Speed: \(sender.value)"
-    }
-    
     // MARK: - Private
-    private func playAudioWithVariablePitch(_ rate: Float){
+    private func setPitch(_ pitch: Float) {
+        pitchLabel.text = "Pitch: \(Int(pitch))"
+        changePitchEffect.pitch = pitch
+    }
+    
+    private func setRate(_ rate: Float) {
+        speedLabel.text = "Speed: \(Int(rate))"
+        changePitchEffect.rate = rate
+    }
+    
+    private func playAudio(rate: Float){
         audioEngine.stop()
         audioEngine.reset()
         
@@ -109,6 +68,57 @@ class AudioPlayerViewController: UIViewController {
             try AVAudioSession.sharedInstance().overrideOutputAudioPort(AVAudioSessionPortOverride.speaker)
         } catch _ {
         }
+        
         audioPlayerNode.play()
+        speedSlider.isEnabled = false
+    }
+    
+    private func stopPlaying() {
+        audioEngine.stop()
+        audioEngine.reset()
+        pitchSlider.value = 1.0
+        setPitch(1.0)
+        speedSlider.isEnabled = true
+    }
+    
+    // MARK: - Actions
+    @IBAction func snailButtonTapped(_ sender: UIButton) {
+        pitchSlider.value = 1.0
+        setPitch(1.0)
+        playAudio(rate: 0.5)
+    }
+    
+    @IBAction func rabbitButtonTapped(_ sender: UIButton) {
+        pitchSlider.value = 1.0
+        setPitch(1.0)
+        playAudio(rate: 2.0)
+    }
+    
+    @IBAction func chipmunkButtonTapped(_ sender: UIButton) {
+        pitchSlider.value = 1000
+        setPitch(1000.0)
+        playAudio(rate: 1.0)
+    }
+    
+    @IBAction func vaderButtonTapped(_ sender: UIButton) {
+        pitchSlider.value = -700
+        setPitch(-700.0)
+        playAudio(rate: 1.0)
+    }
+    
+    @IBAction func playButtonTapped(_ sender: UIButton) {
+        playAudio(rate: changePitchEffect.rate)
+    }
+
+    @IBAction func stopButtonTapped(_ sender: UIButton) {
+        stopPlaying()
+    }
+    
+    @IBAction func pitchSliderChanged(_ sender: UISlider) {
+        setPitch(sender.value)
+    }
+    
+    @IBAction func speedSliderChanged(_ sender: UISlider) {
+        setRate(sender.value)
     }
 }

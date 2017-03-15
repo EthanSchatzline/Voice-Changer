@@ -181,7 +181,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="32" translatesAutoresizingMaskIntoConstraints="NO" id="JM2-Rz-IA1">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="JM2-Rz-IA1">
                                 <rect key="frame" x="38" y="376" width="244" height="31"/>
                                 <connections>
                                     <action selector="speedSliderChanged:" destination="oWm-wK-Bp6" eventType="valueChanged" id="6eW-NF-YLI"/>
