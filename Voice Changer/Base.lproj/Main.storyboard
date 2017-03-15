@@ -29,7 +29,7 @@
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="recordAudio:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="XZb-EZ-Lxr"/>
+                                    <action selector="recordButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="pXX-Y7-3N2"/>
                                 </connections>
                             </button>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recording" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yeg-cT-FN2">
@@ -48,7 +48,7 @@
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="stopRecording:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="0TW-iM-WHr"/>
+                                    <action selector="stopButtonTapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="thS-AW-5Dr"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -80,7 +80,7 @@
                     <navigationItem key="navigationItem" title="Record" id="moz-V8-jUn"/>
                     <connections>
                         <outlet property="recordButton" destination="vHq-ai-7Rg" id="cCl-i9-7zl"/>
-                        <outlet property="recordingInProgress" destination="Yeg-cT-FN2" id="ah5-af-UXf"/>
+                        <outlet property="statusLabel" destination="Yeg-cT-FN2" id="h2g-lg-Lxe"/>
                         <outlet property="stopButton" destination="R7L-pC-QSL" id="KxI-i0-cmY"/>
                         <segue destination="oWm-wK-Bp6" kind="show" identifier="stopRecording" id="rsd-2Q-nCo"/>
                     </connections>
