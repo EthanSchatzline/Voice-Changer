@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E0892CB1E791D310070B111 /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0892CA1E791D310070B111 /* GCD.swift */; };
 		3B3083291BDF3C4800567461 /* RecordedAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3083281BDF3C4800567461 /* RecordedAudio.swift */; };
 		3B6526731B56232F008358EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B6526711B56232F008358EA /* Main.storyboard */; };
 		3BF326F31B55FF4700B6FBBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF326F21B55FF4700B6FBBC /* AppDelegate.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2E0892CA1E791D310070B111 /* GCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCD.swift; sourceTree = "<group>"; };
 		3B3083281BDF3C4800567461 /* RecordedAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordedAudio.swift; sourceTree = "<group>"; };
 		3B6526721B56232F008358EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3BF326ED1B55FF4700B6FBBC /* Voice Changer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Voice Changer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,6 +79,14 @@
 			name = Controllers;
 			sourceTree = "<group>";
 		};
+		2E0892C91E791D240070B111 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2E0892CA1E791D310070B111 /* GCD.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		3BF326E41B55FF4700B6FBBC = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +111,7 @@
 				2E0892C71E7914400070B111 /* Models */,
 				2E0892C81E7914470070B111 /* Controllers */,
 				3B6526711B56232F008358EA /* Main.storyboard */,
+				2E0892C91E791D240070B111 /* Utils */,
 				3BF326F91B55FF4700B6FBBC /* Images.xcassets */,
 				3BF326F01B55FF4700B6FBBC /* Supporting Files */,
 			);
@@ -244,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E0892CB1E791D310070B111 /* GCD.swift in Sources */,
 				3B3083291BDF3C4800567461 /* RecordedAudio.swift in Sources */,
 				3BF327131B56152B00B6FBBC /* AudioPlayerViewController.swift in Sources */,
 				3BF326F51B55FF4700B6FBBC /* RecordingViewController.swift in Sources */,
