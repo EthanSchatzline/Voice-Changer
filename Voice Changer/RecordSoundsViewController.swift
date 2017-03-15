@@ -33,6 +33,12 @@ class RecordSoundsViewController: UIViewController {
          AVEncoderBitRateKey: 16,
          AVNumberOfChannelsKey: 2,
          AVSampleRateKey: 44100.0]
+    private lazy var filePathURL: URL = {
+        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
+        let fileName = Constants.AudioFile.FileName
+        let fileURL = URL(fileURLWithPath: path).appendingPathComponent(fileName)
+        return fileURL
+    }()
     
     // MARK: - View Lifecycle
     override func viewDidLoad() {
@@ -66,17 +72,7 @@ class RecordSoundsViewController: UIViewController {
     }
     
     private func startRecording() {
-        let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-        let recordingName = Constants.AudioFile.FileName
-        let filePath = URL(fileURLWithPath: dirPath).appendingPathComponent(recordingName)
-        
-        let session = AVAudioSession.sharedInstance()
-        do {
-            try session.setCategory(AVAudioSessionCategoryPlayAndRecord)
-        } catch _ {
-        }
-        
-        audioRecorder = try? AVAudioRecorder(url: filePath, settings: recordSettings)
+        audioRecorder = try? AVAudioRecorder(url: filePathURL, settings: recordSettings)
         audioRecorder?.delegate = self
         audioRecorder?.record()
     }
