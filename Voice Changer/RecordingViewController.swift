@@ -15,7 +15,7 @@ private struct Constants {
         static let StopRecording: String = "stopRecording"
     }
     struct AudioFile {
-        static let FileName: String = "my_audio.wav"
+        static let FileName: String = "kVoiceChangerRecordedAudio.wav"
     }
 }
 
@@ -35,9 +35,8 @@ class RecordingViewController: UIViewController {
          AVNumberOfChannelsKey: 2,
          AVSampleRateKey: 44100.0]
     private lazy var filePathURL: URL = {
-        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-        let fileName = Constants.AudioFile.FileName
-        let fileURL = URL(fileURLWithPath: path).appendingPathComponent(fileName)
+        let path = NSTemporaryDirectory().appending(Constants.AudioFile.FileName)
+        let fileURL = URL(fileURLWithPath: path)
         return fileURL
     }()
     
