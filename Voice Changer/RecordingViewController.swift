@@ -50,7 +50,6 @@ class RecordingViewController: UIViewController {
     // MARK: - Private
     private func toggleRecording() {
         let isRecording = audioRecorder?.isRecording ?? false
-        
         statusLabel.isHidden = isRecording
         stopButton.isHidden = isRecording
         recordButton.isEnabled = isRecording
