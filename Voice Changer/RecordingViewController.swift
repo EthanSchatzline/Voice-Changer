@@ -28,16 +28,15 @@ class RecordingViewController: UIViewController {
     
     // MARK: - Properties
     private var audioRecorder: AVAudioRecorder?
-    fileprivate var recordedAudio: RecordedAudio?
     private let recordSettings: [String : Any] =
         [AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue,
          AVEncoderBitRateKey: 16,
          AVNumberOfChannelsKey: 2,
          AVSampleRateKey: 44100.0]
-    private lazy var filePathURL: URL = {
+    private lazy var fileURL: URL = {
         let path = NSTemporaryDirectory().appending(Constants.AudioFile.FileName)
-        let fileURL = URL(fileURLWithPath: path)
-        return fileURL
+        let url = URL(fileURLWithPath: path)
+        return url
     }()
     
     // MARK: - View Lifecycle
@@ -62,7 +61,7 @@ class RecordingViewController: UIViewController {
     }
     
     private func startRecording() {
-        audioRecorder = try? AVAudioRecorder(url: filePathURL, settings: recordSettings)
+        audioRecorder = try? AVAudioRecorder(url: fileURL, settings: recordSettings)
         audioRecorder?.delegate = self
         audioRecorder?.record()
     }
@@ -79,7 +78,7 @@ class RecordingViewController: UIViewController {
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let viewcontroller = segue.destination as? AudioPlayerViewController {
-            viewcontroller.receivedAudio = recordedAudio
+            viewcontroller.recordedURL = audioRecorder?.url
         }
     }
 }
@@ -88,7 +87,6 @@ class RecordingViewController: UIViewController {
 extension RecordingViewController: AVAudioRecorderDelegate {
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
         if(flag){
-            recordedAudio = RecordedAudio(filePathUrl: recorder.url, title: recorder.url.lastPathComponent)
             self.performSegue(withIdentifier: Constants.SegueID.StopRecording, sender: nil)
         } else{
             recordButton.isEnabled = true

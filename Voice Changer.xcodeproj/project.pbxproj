@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2E0892CB1E791D310070B111 /* GCD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E0892CA1E791D310070B111 /* GCD.swift */; };
-		3B3083291BDF3C4800567461 /* RecordedAudio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3083281BDF3C4800567461 /* RecordedAudio.swift */; };
 		3B6526731B56232F008358EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B6526711B56232F008358EA /* Main.storyboard */; };
 		3BF326F31B55FF4700B6FBBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF326F21B55FF4700B6FBBC /* AppDelegate.swift */; };
 		3BF326F51B55FF4700B6FBBC /* RecordingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BF326F41B55FF4700B6FBBC /* RecordingViewController.swift */; };
@@ -30,7 +29,6 @@
 
 /* Begin PBXFileReference section */
 		2E0892CA1E791D310070B111 /* GCD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GCD.swift; sourceTree = "<group>"; };
-		3B3083281BDF3C4800567461 /* RecordedAudio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordedAudio.swift; sourceTree = "<group>"; };
 		3B6526721B56232F008358EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3BF326ED1B55FF4700B6FBBC /* Voice Changer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Voice Changer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3BF326F11B55FF4700B6FBBC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -62,14 +60,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2E0892C71E7914400070B111 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				3B3083281BDF3C4800567461 /* RecordedAudio.swift */,
-			);
-			name = Models;
-			sourceTree = "<group>";
-		};
 		2E0892C81E7914470070B111 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -108,7 +98,6 @@
 		3BF326EF1B55FF4700B6FBBC /* Voice Changer */ = {
 			isa = PBXGroup;
 			children = (
-				2E0892C71E7914400070B111 /* Models */,
 				2E0892C81E7914470070B111 /* Controllers */,
 				3B6526711B56232F008358EA /* Main.storyboard */,
 				2E0892C91E791D240070B111 /* Utils */,
@@ -256,7 +245,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E0892CB1E791D310070B111 /* GCD.swift in Sources */,
-				3B3083291BDF3C4800567461 /* RecordedAudio.swift in Sources */,
 				3BF327131B56152B00B6FBBC /* AudioPlayerViewController.swift in Sources */,
 				3BF326F51B55FF4700B6FBBC /* RecordingViewController.swift in Sources */,
 				3BF326F31B55FF4700B6FBBC /* AppDelegate.swift in Sources */,

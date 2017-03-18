@@ -32,7 +32,7 @@ class AudioPlayerViewController: UIViewController {
     @IBOutlet var speedSlider: UISlider!
     
     // MARK: - Properties
-    var receivedAudio: RecordedAudio!
+    var recordedURL: URL?
     private var audioFile: AVAudioFile?
     private var audioEngine: AVAudioEngine = AVAudioEngine()
     private var changePitchEffect: AVAudioUnitTimePitch = AVAudioUnitTimePitch()
@@ -41,7 +41,9 @@ class AudioPlayerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        audioFile = try? AVAudioFile(forReading: receivedAudio.filePathUrl)
+        if let url = recordedURL {
+            audioFile = try? AVAudioFile(forReading: url)
+        }
     }
     
     // MARK: - Private
