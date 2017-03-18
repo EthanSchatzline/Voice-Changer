@@ -61,9 +61,13 @@ class RecordingViewController: UIViewController {
     }
     
     private func startRecording() {
-        audioRecorder = try? AVAudioRecorder(url: fileURL, settings: recordSettings)
-        audioRecorder?.delegate = self
-        audioRecorder?.record()
+        do {
+            audioRecorder = try AVAudioRecorder(url: fileURL, settings: recordSettings)
+            audioRecorder?.delegate = self
+            audioRecorder?.record()
+        } catch {
+            print("Error creating audio recording with file url:\n\(error)")
+        }
     }
 
     // MARK: - Actions

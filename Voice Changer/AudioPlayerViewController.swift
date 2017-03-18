@@ -42,7 +42,11 @@ class AudioPlayerViewController: UIViewController {
         super.viewDidLoad()
         
         if let url = recordedURL {
-            audioFile = try? AVAudioFile(forReading: url)
+            do {
+                audioFile = try AVAudioFile(forReading: url)
+            } catch {
+                print("Error creating audioFile:\n\(error)")
+            }
         }
     }
     
@@ -76,8 +80,8 @@ class AudioPlayerViewController: UIViewController {
         
         do {
             try audioEngine.start()
-            try AVAudioSession.sharedInstance().overrideOutputAudioPort(AVAudioSessionPortOverride.speaker)
-        } catch _ {
+        } catch {
+            print("Error starting audioEngine:\n\(error)")
             return
         }
         

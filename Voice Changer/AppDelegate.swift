@@ -16,9 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let session = AVAudioSession.sharedInstance()
-        do {
-            try session.setCategory(AVAudioSessionCategoryPlayAndRecord)
-        } catch _ {
+        do
+        {
+            try session.setCategory(AVAudioSessionCategoryPlayAndRecord, mode: AVAudioSessionModeVideoRecording,
+                                    options: [.mixWithOthers, .defaultToSpeaker, .allowAirPlay, .allowBluetooth, .allowBluetoothA2DP])
+            try session.setActive(true, with: .notifyOthersOnDeactivation)
+        }
+        catch
+        {
+            print("Setting Audio Session Error: \(error)")
         }
         return true
     }
