@@ -82,6 +82,12 @@ class AudioPlayerViewController: UIViewController {
         audioPlayerNode.play()
     }
     
+    private func playAudio(rate: Float, pitch: Float) {
+        setRate(rate)
+        setPitch(pitch)
+        playAudio()
+    }
+    
     private func stopPlaying() {
         audioEngine.stop()
         audioEngine.reset()
@@ -89,27 +95,19 @@ class AudioPlayerViewController: UIViewController {
     
     // MARK: - Actions
     @IBAction func snailButtonTapped(_ sender: UIButton) {
-        setPitch(Constants.Pitch.Default)
-        setRate(Constants.Rate.Snail)
-        playAudio()
+        playAudio(rate:Constants.Rate.Snail, pitch: Constants.Pitch.Default)
     }
     
     @IBAction func rabbitButtonTapped(_ sender: UIButton) {
-        setPitch(Constants.Pitch.Default)
-        setRate(Constants.Rate.Rabbit)
-        playAudio()
+        playAudio(rate:Constants.Rate.Rabbit, pitch: Constants.Pitch.Default)
     }
     
     @IBAction func chipmunkButtonTapped(_ sender: UIButton) {
-        setPitch(Constants.Pitch.Chipmunk)
-        setRate(Constants.Rate.Default)
-        playAudio()
+        playAudio(rate:Constants.Rate.Default, pitch: Constants.Pitch.Chipmunk)
     }
     
     @IBAction func vaderButtonTapped(_ sender: UIButton) {
-        setPitch(Constants.Pitch.Vader)
-        setRate(Constants.Rate.Default)
-        playAudio()
+        playAudio(rate:Constants.Rate.Default, pitch: Constants.Pitch.Vader)
     }
     
     @IBAction func playButtonTapped(_ sender: UIButton) {
