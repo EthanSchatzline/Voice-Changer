@@ -16,6 +16,11 @@ private struct Constants {
     }
     struct AudioFile {
         static let FileName: String = "kVoiceChangerRecordedAudio.wav"
+        static let Settings: [String : Any] =
+            [AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue,
+             AVEncoderBitRateKey: 16,
+             AVNumberOfChannelsKey: 2,
+             AVSampleRateKey: 44100.0]
     }
 }
 
@@ -28,11 +33,6 @@ class RecordingViewController: UIViewController {
     
     // MARK: - Properties
     private var audioRecorder: AVAudioRecorder?
-    private let recordSettings: [String : Any] =
-        [AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue,
-         AVEncoderBitRateKey: 16,
-         AVNumberOfChannelsKey: 2,
-         AVSampleRateKey: 44100.0]
     private lazy var fileURL: URL = {
         let path = NSTemporaryDirectory().appending(Constants.AudioFile.FileName)
         let url = URL(fileURLWithPath: path)
@@ -61,12 +61,14 @@ class RecordingViewController: UIViewController {
     }
     
     private func startRecording() {
+        FileManager.removeFileAtURLIfNeeded(url: fileURL)
         do {
-            audioRecorder = try AVAudioRecorder(url: fileURL, settings: recordSettings)
+            audioRecorder = try AVAudioRecorder(url: fileURL, settings: Constants.AudioFile.Settings)
             audioRecorder?.delegate = self
             audioRecorder?.record()
         } catch {
             print("Error creating audio recording with file url:\n\(error)")
+            toggleRecording()
         }
     }
 
