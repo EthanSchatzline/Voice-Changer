@@ -27,7 +27,7 @@ private struct Constants {
         static let Cyan: UIColor = UIColor(red: 26/255, green: 57/255, blue: 92/255, alpha: 1.0)
     }
     struct AudioFile {
-        static let FileName: String = "VoiceChanger.m4a"
+        static let FileName: String = "VoiceChanger.wav"
         static let Settings: [String : Any] =
             [AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue,
              AVEncoderBitRateKey: 16,
@@ -139,22 +139,34 @@ class AudioPlayerViewController: UIViewController {
     }
     
     private func exportAudio(completion: @escaping SuccessCompletion) {
-        guard let url = recordedURL else { completion(false); return }
-        
-        FileManager.removeFileAtURLIfNeeded(url: shareURL)
-        let asset = AVAsset(url: url)
-        if let exportSession = AVAssetExportSession(asset: asset, presetName: AVAssetExportPresetAppleM4A) {
-            exportSession.outputFileType = AVFileTypeAppleM4A
-            exportSession.outputURL = shareURL
-            
-            exportSession.exportAsynchronously(completionHandler: {
-                if exportSession.status == .completed {
-                    completion(true)
-                } else {
-                    completion(false)
-                }
-            })
-        }
+//        guard let recordedAudioFile = audioFile else { completion(false); return }
+//        
+//        FileManager.removeFileAtURLIfNeeded(url: shareURL)
+//        let asset = AVAsset(url: url)
+//        
+//        do {
+//            let audioFile = try AVAudioFile(forWriting: shareURL, settings: audioEngine.mainMixerNode.outputFormat(forBus: 0).settings)
+//            let audioFrameCount = AVAudioFrameCount(recordedAudioFile.length)
+//            let buffer = AVAudioPCMBuffer(pcmFormat: recordedAudioFile.processingFormat, frameCapacity: audioFrameCount)
+//            try recordedAudioFile.read(into: buffer, frameCount: audioFrameCount)
+//            try audioFile.write(from: buffer)
+//            audioFile.framePosition = audioFile.length
+//        } catch {
+//            print("ERROR EXPORTING: \(error)")
+//        }
+//        
+//        if let exportSession = AVAssetExportSession(asset: asset, presetName: AVAssetExportPresetAppleM4A) {
+//            exportSession.outputFileType = AVFileTypeAppleM4A
+//            exportSession.outputURL = shareURL
+//            
+//            exportSession.exportAsynchronously(completionHandler: {
+//                if exportSession.status == .completed {
+//                    completion(true)
+//                } else {
+//                    completion(false)
+//                }
+//            })
+//        }
     }
     
     private func displayActivityViewController() {
